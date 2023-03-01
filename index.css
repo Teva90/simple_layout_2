@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
+:root {
+    --text-color: #E5FBFF;
+    --dark-blue: #071630;
+    --light-blue: #29C9E7;
+    --yellow: #FFD577;
+    --dark-yellow: #FFBC28;
+    --card-border: rgba(167, 239, 253, 1);
+    --body-font: 'Merriweather', serif;
+    --heading-font: 'Quattrocento', serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--dark-blue);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: 62.5%;
+}
+/*-------------------------------------------------------------*/
+/*-------------------------  NAVIGATION  -----------------------*/
+/*--------------------------------------------------------------*/
+header {
+    position: relative;
+}
+nav {
+    width: 100%;
+    height: 4rem;
+    background: var(--light-blue);
+    position: fixed;
+}
+img#header-img {
+    position: absolute;
+    max-width: 3rem;
+    height: auto;
+    top: .5rem;
+    margin-left: 2rem;
+}
+.brand {
+    color: var(--yellow);
+    font-size: 2rem;
+    line-height: 4rem;
+    padding: 0 2rem;
+    margin-left: 3.75rem;
+}
+nav ul {
+    float: right;
+    margin-right: 2rem;
+}
+nav ul li {
+    display: inline-block;
+    line-height: 4rem;
+    margin: 0 .5rem;
+}
+nav ul li a {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+}
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--yellow);
+    color: var(--dark-blue);
+}
+.checkbtn {
+    font-size: 2rem;
+    color: var(--text-color);
+    float: right;
+    line-height: 4rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    display: none;
+}
+#check {
+    display: none;
+}
+/*--------------------------------------------------------------*/
+/*----------------------------  MAIN  --------------------------*/
+/*--------------------------------------------------------------*/
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 8rem;
+}
+section {
+    padding: 4rem 0;
+    margin: 3rem 0;
+}
+#about {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+#about .text {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+h1.brand-heading {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    color: var(--text-color);
+    text-shadow: 0 0 10px var(--yellow);
+}
+h2 {
+    font-size: 1.25rem;
+    padding: 1.75rem 0 1.25rem 0;
+}
+p.description {
+    font-size: 1rem;
+    padding-top: 1.75rem;
+}
+#about .image {
+    grid-column: 3;
+    grid-row: 1;
+}
+.astronaut {
+    max-width: 250px;
+    float: right;
+    z-index: -1;
+}
+#features {
+    margin-top: -2rem;
+}
+#features h2.section-heading,
+#testimonials h2.section-heading,
+#pricing h2.section-heading,
+#preview h2.section-heading,
+#signup h2.section-heading {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    color: var(--text-color);
+    padding: 1.25rem 0;
+}
+/*--------------------------------------------------------------*/
+/*---------------------------  FEATURES  -----------------------*/
+/*--------------------------------------------------------------*/
+/* Float four columns side by side */
+#features .column {
+    float: left;
+    width: 33%;
+    padding: 0 10px;
+}
+/* Remove extra left and right margins, due to padding in columns */
+#features .row {
+    margin: 0 -5px;
+}
+/* Clear floats after the columns */
+#features .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Style the counter cards */
+#features .card {
+    border: 2px solid var(--card-border);
+    padding: 16px;
+    text-align: center;
+    background-color: var(--text-color);
+    border-radius: 5px;
+}
+#features .card i.bi {
+    font-size: 3rem;
+    color: var(--dark-blue);
+    display: block;
+    padding-bottom: 0.5rem;
+}
+#features .card h3 {
+    font-size: 1.125rem;
+    padding: .5rem 0;
+    color: var(--light-blue);
+}
+#features .card p {
+    font-size: .85rem;
+    padding: 0.5rem 1rem;
+    color: var(--dark-blue);
+}
+/*--------------------------------------------------------------*/
+/*----------------------------  VIDEO  -------------------------*/
+/*--------------------------------------------------------------*/
+/* Float four columns side by side */
+#preview .column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+}
+/* Remove extra left and right margins, due to padding in columns */
+#preview .row {
+    margin: 0 -5px;
+}
+/* Clear floats after the columns */
+#preview .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+iframe {
+    border: none;
+}
+/* Style the counter cards */
+#preview .card {
+    padding: 16px 16px 16px 0;
+}
+#preview .card p {
+    font-size: 1rem;
+    padding: 0.5rem 1rem 0.5rem 0;
+    color: var(--text-color);
+}
+/*--------------------------------------------------------------*/
+/*--------------------------  PRICING  -------------------------*/
+/*--------------------------------------------------------------*/
+/* Float four columns side by side */
+#pricing .column {
+    float: left;
+    width: 30%;
+    padding: 0 10px;
+}
+/* Remove extra left and right margins, due to padding in columns */
+#pricing .row {
+    margin: 1rem 0 0 6rem;
+    display: flex;
+    align-content: center;
+}
+/* Clear floats after the columns */
+#pricing .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Style the counter cards */
+#pricing .card {
+    border: 2px solid var(--card-border);
+    padding: 16px;
+    text-align: center;
+    background-color: var(--text-color);
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #121212;
+}
+#pricing .card h3 {
+    font-size: 1.125rem;
+    padding: .5rem 0;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#pricing i {
+    font-size: 3rem;
+    color: var(--light-blue);
+}
+#pricing #premium i {
+    font-size: 3rem;
+    color: var(--yellow);
+}
+#pricing p.price {
+    padding: 0.5rem 1rem;
+    color: var(--dark-blue);
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+#pricing p.price span {
+    font-size: .75rem;
+    font-weight: lighter;
+}
+#pricing .pricing-features {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    background: var(--light-blue);
+    padding: .75rem 0;
+    margin: 1.5rem -1rem;
+}
+#pricing #premium .pricing-features {
+    font-size: 1.25rem;
+    color: var(--dark-blue);
+    background: var(--yellow);
+    padding: .75rem 0;
+    margin: 1.5rem -1rem;
+}
+#pricing ul {
+    margin-bottom: 2rem;
+}
+#pricing li.features-items {
+    color: var(--dark-blue);
+    list-style: none;
+    font-size: .75rem;
+    line-height: 1.5rem;
+}
+#pricing #premium.card {
+    border: 10px solid var(--yellow);
+}
+#pricing p.btn-pricing {
+    margin-bottom: 1rem;
+}
+#pricing #starter.card p a.add-to-card,
+#pricing #unlimited.card p a.add-to-card {
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    background-color: var(--light-blue);
+    border-radius: 3px;
+    color: var(--dark-blue);
+    box-shadow: 2px 2px 4px #888888;
+}
+#pricing #premium.card p a.add-to-card {
+    margin: 1rem 0;
+    padding: .75rem 1.25rem;
+    font-size: 1rem;
+    background-color: var(--yellow);
+    border-radius: 3px;
+    color: var(--dark-blue);
+    box-shadow: 2px 2px 4px #888888;
+}
+/*--------------------------------------------------------------*/
+/*----------------------------  SIGNUP  -------------------------*/
+/*--------------------------------------------------------------*/
+/* Float four columns side by side */
+#signup .column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+}
+/* Remove extra left and right margins, due to padding in columns */
+#signup .row {
+    margin: 0 -5px;
+}
+/* Clear floats after the columns */
+#signup .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Style the counter cards */
+#signup .card {
+    padding: 16px 16px 16px 0;
+    border-radius: 5px;
+}
+#signup .card h3 {
+    font-size: 1.125rem;
+    padding: .5rem 0;
+    color: var(--yellow);
+}
+#signup .card i {
+    padding-right: 0.5rem;
+    color: var(--yellow);
+}
+#signup .card p {
+    font-size: 1rem;
+    padding: 0.5rem 1rem 0.5rem 0;
+    color: var(--text-color);
+}
+/* form styling */
+form {
+    margin-top: 2rem;
+}
+.input-group {
+    margin-bottom: 1rem;
+}
+.form-label {
+    margin-bottom: .5rem;
+}
+label {
+    display: inline-block;
+    font-size: 1rem;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+input {
+    margin: 0;
+}
+.form-text {
+    margin-top: 0.25rem;
+    font-size: .875em;
+    color: var(--text-color);
+    font-style: italic;
+}
+.form-check-input[type=checkbox] {
+    border-radius: 0.25em;
+}
+.form-check .form-check-input {
+    float: left;
+    /*margin-left: -1.5em;*/
+    margin-right: 0.5rem;
+}
+.form-check-input {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0, 0, 0, .25);
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+    appearance: none;
+    /* -webkit-print-color-adjust: exact; */
+    color-adjust: exact;
+}
+[type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.btn-primary {
+    color: var(--dark-blue);
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--dark-blue);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: var(--yellow);
+    border: 1px solid var(--yellow);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+}
+[type=button], [type=reset], [type=submit], button {
+    appearance: button;
+}
+.signup-img {
+    margin-right: 10rem;
+}
+.signup-img img {
+    width: 60%;
+    height: auto;
+    float: right;
+}
+/*--------------------------------------------------------------*/
+/*-----------------------  TESTIMONIALS  -----------------------*/
+/*--------------------------------------------------------------*/
+
+/* Float four columns side by side */
+#testimonials .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+/* Remove extra left and right margins, due to padding in columns */
+#testimonials .row {
+    margin: 0 -5px;
+}
+/* Clear floats after the columns */
+#testimonials .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Style the counter cards */
+#testimonials .card {
+    border: 2px solid var(--card-border);
+    padding: 16px;
+    text-align: center;
+    background-color: var(--text-color);
+    border-radius: 5px;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 33% auto;
+}
+#testimonials .card h3 {
+    flex: 1;
+    padding: 10px;
+    font-size: 1.25rem;
+    color: var(--dark-yellow);
+}
+#testimonials .card p {
+    font-size: .85rem;
+    padding: 0.5rem;
+    color: var(--dark-blue);
+}
+#testimonials .card .customer-name {
+    color: var(--dark-blue);
+    font-style: italic;
+    font-size: .75rem;
+}
+.rounded {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+/*--------------------------------------------------------------*/
+/*--------------------------  FOOTER  --------------------------*/
+/*--------------------------------------------------------------*/
+footer {
+    background-color: var(--light-blue);
+    height: 20rem;
+}
+footer .column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+    text-align: center;
+}
+footer .credits {
+    text-align: left;
+}
+footer .row {
+    padding-top: 3rem;
+}
+/* Clear floats after the columns */
+footer .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+footer .card {
+    padding: 16px;
+    text-align: center;
+    border-radius: 5px;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 50% auto;
+}
+footer .footer-heading {
+    font-size: 1.25rem;
+    color: var(--dark-blue);
+    padding-bottom: 1rem;
+}
+footer ul li.social-icon {
+    display: inline-block;
+    font-size: 1.75rem;
+    padding: .5rem;
+}
+footer p.copyright,
+footer p.copyright a {
+    font-size: 0.8rem;
+    color: var(--dark-blue);
+    line-height: 1.25rem;
+}
+footer p.copyright a {
+    text-decoration: underline;
+    color: var(--yellow);
+}
+/*--------------------------------------------------------------*/
+/*-----------------------  MEDIA QUERIES  ----------------------*/
+/*--------------------------------------------------------------*/
+@media (max-width: 952px) {
+    label.brand {
+        font-size: 1.75rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--light-blue);
+        padding-top: 2rem;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        font-size: 1.25rem;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+
+        background: none;
+        color: var(--yellow);
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
